@@ -14,12 +14,15 @@ import sys
 #
 
 def gridChallenge(grid):
+    # จัดเรียงแต่ละแถว
     grid = [sorted(row) for row in grid]
     
-    for i in range(len(grid[0])):
+    # ตรวจสอบแต่ละคอลัมน์ว่าถูกเรียงตามลำดับจากบนลงล่างหรือไม่
+    for i in range(len(grid[0])):  # ตรวจสอบทุกคอลัมน์
         for j in range(1, len(grid)):
             if grid[j][i] < grid[j-1][i]:
                 return "NO"
+    
     return "YES"
 
 if __name__ == '__main__':
